@@ -1,11 +1,16 @@
 name: Create Cluster
 
-on: pull_request
+on:
+  pull_request:
+    branches:
+      - "master"
   push:
-    branches: [ "master" ]
+    branches:
+      - "master"
+
 jobs:
   create-cluster:
     runs-on: ubuntu-latest
     steps:
-      - name: Create k8s Kind Cluster
+      - name: Set up Kind
         uses: helm/kind-action@v1
