@@ -40,6 +40,7 @@ jobs:
 
       - name: Run Helm chart
         run: |
+          kubectl get services
           helm install my-flask-app ./my_flask_app
 
       - name: Run application tests
