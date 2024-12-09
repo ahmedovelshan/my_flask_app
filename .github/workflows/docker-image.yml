@@ -40,7 +40,7 @@ jobs:
 
       - name: Run Helm chart
         run: |
-          helm install my_flask_app ./my_flask_app
+          helm install my-flask-app ./my_flask_app
 
       - name: Run application tests
         run: |
