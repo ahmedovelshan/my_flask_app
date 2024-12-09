@@ -32,11 +32,7 @@ jobs:
 
       - name: Create k8s Kind Cluster
         uses: helm/kind-action@v1
-  
-      - name: Deploy to Kubernetes
-        run: |
-          kubectl apply -f deployment.yaml
-          kubectl wait --for=condition=available --timeout=60s deployment/my-app
+
 
       - name: Install Helm
         run: |
