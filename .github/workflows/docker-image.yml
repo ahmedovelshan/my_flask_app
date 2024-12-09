@@ -46,7 +46,7 @@ jobs:
         run: |
           kubectl port-forward service/my-app 8080:80 &
           sleep 5
-          curl http://localhost:5000/health
+          curl http://localhost:30500/health
   
       # Optional: Clean up kind cluster
       - name: Delete kind cluster
