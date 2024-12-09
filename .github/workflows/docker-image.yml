@@ -45,6 +45,7 @@ jobs:
       - name: Run application tests
         run: |
           kubectl get services
+          sleep 60
           kubectl get pods
           curl http://localhost:30500/health
   
