@@ -44,10 +44,10 @@ jobs:
 
       - name: Run application tests
         run: |
-          sleep 60
-          kubectl port-forward service/my-flask-app-flask-app 5000:5000
-          kubectl get services
-          curl http://localhost:30500/health
+          sleep 50
+          nohup kubectl port-forward service/my-flask-app-flask-app 5000:5000 > port-forward.log 2>&1 &
+          sleep 10 # Give port-forward some time to establish
+          curl http://localhost:5000/health
   
       # Optional: Clean up kind cluster
       - name: Delete kind cluster
