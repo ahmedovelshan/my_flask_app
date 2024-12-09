@@ -44,9 +44,9 @@ jobs:
 
       - name: Run application tests
         run: |
-          kubectl get services
           sleep 60
-          kubectl get pods
+          kubectl port-forward service/my-flask-app-flask-app 5000:5000
+          kubectl get services
           curl http://localhost:30500/health
   
       # Optional: Clean up kind cluster
