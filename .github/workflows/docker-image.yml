@@ -45,6 +45,7 @@ jobs:
       - name: Run application tests
         run: |
           kubectl get services
+          kubectl get pods
           curl http://localhost:30500/health
   
       # Optional: Clean up kind cluster
